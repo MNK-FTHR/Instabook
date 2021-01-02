@@ -9,6 +9,4 @@ class PhotoUser extends Pivot
 {
     use HasFactory; 
     //
-
-
 }

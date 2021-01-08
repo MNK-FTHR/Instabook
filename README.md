@@ -73,3 +73,19 @@ Enfin, il faudra intégrer certaines règles de gestions, telles que l'appartena
   - Un commentaire ne peut être que fait que par un utilisateur qui appartient au même groupe que la photo
   - La photo n'est créée que si son propriétaire appartient bien au même groupe que la photo
   - Un utilisateur ne peut être ajouté à une photo que si il est dans le même groupe que la photo
+
+
+### Etapes
+J'ai d'abord fais les fichiers de migrations et regardé si les premiers tests passaient.
+J'ai ensuite fais les relations les plus claires et faciles, certaines se validaient seules.
+J'ai fais pleins de tests pour les moins claires et j'ai réussi par trouver les solutions.
+J'ai terminé par le dernier fichier de tests qui m'a demandé plus de lecture de doc et d'exemples que le reste.
+
+### Difficultés
+J'ai eu pas mal de soucis avec les relations de types owner por les photos et les comm, le plus difficile a été pour le comm qui devient une réponse.
+Je n'ai pas réussi "photo user is not created for user who does not belong to same group":
+    -Si je met une relation dans PhotoUser une quantité abominable de tests fail
+    -Il faut faire une booted() il me semble mais je ne sai pas où ou comment
+
+### PS
+J'ai bien aimé cet exercice

@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class GroupUser extends Pivot
 {
     use HasFactory; 
-    //
+    //absolument vide
 }

@@ -9,6 +9,7 @@ class Tag extends Model
 {
     use HasFactory;
     public function photos(){
+        // un tag appartient a plusieurs photo via le pivot PhotoTag
         return $this->belongsToMany(Photo::class)->using(PhotoTag::class)->withPivot("id")->withTimestamps();
     } 
 }

@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class PhotoTag extends Pivot
 {
     use HasFactory; 
-    //
+    //absolument vide
 }

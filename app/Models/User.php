@@ -42,9 +42,9 @@ class User extends Authenticatable
     ];
 
     /**
-     * Renvoi l'utilisateur qui a posé la pièce jointe
+     * Un utilisateur a plusieurs commentaires
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
      public function comments()
      {
@@ -52,21 +52,31 @@ class User extends Authenticatable
      }
 
     /**
-     * Renvoi l'utilisateur qui a posé la pièce jointe
+     * Un utilisateur possède plusieurs photos
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
      public function photos()
      {
          return $this->hasMany(Photo::class);
      }
 
+    /**
+     * Un utilisateur appartient aux photos sur lesquelles il apparait
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
      public function photosAppearance()
      {
         return $this->belongsToMany(Photo::class)->using(PhotoUser::class)->withPivot("id")->withTimestamps();;
 
      }
 
+    /**
+     * Un utilisateur appartient a plusieurs groupes
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
      public function groups()
      {
         return $this->belongsToMany(Group::class)->using(GroupUser::class)->withPivot("id")->withTimestamps();;
